@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <drag-drop-zone v-slot="{ dropZoneActive }">
+      <div v-if="dropZoneActive">
+        <div>drop them</div>
+      </div>
+      <div v-else>
+        <div class="mb-6">drag</div>
+      </div>
+    </drag-drop-zone>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DragDropZone from './components/DragDropZone/DragDropZone.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+      DragDropZone
   }
 }
 </script>
