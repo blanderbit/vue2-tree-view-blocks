@@ -36,7 +36,7 @@ returns clicked node
 default slot - for display nested block
 
 ## EXAMPLE 
-
+```
 <template>
     <tree-view-blocks :json="data" v-slot="{ data }">
         <div>
@@ -44,6 +44,6 @@ default slot - for display nested block
         </div>
     </tree-view-blocks>
 </template>
-
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
