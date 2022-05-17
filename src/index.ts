@@ -1,3 +1,3 @@
-import DragDropZoneComponent  from './components/DragDropZone/DragDropZone.vue'
+import TreeViewBlocksComponent from './components/TreeViewBlocks/TreeViewBlocks.vue'
 
-export const DragDropZone = DragDropZoneComponent;
+export const TreeViewBlocks = TreeViewBlocksComponent;

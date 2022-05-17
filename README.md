@@ -1,36 +1,48 @@
-# vue2-drag-drop-zone
+# vue2-tree-view-blocks
 
 ## PROPS
 
-height - by default 400px, you can pass any height with any extension (px, em, vh....)
+json - Json structure
 
-fileValidationOptions - Array of options, for check file extension, should be pass 
-```
-[
-  { extension: '.pdf' } 
-] // any extension 
-```
+{
+    name:'', // required
+    children: [], // required
+    mate: [], // required,
+    ...(any properties)
+}
+
+options - object for setup 
+
+{
+    initialExpandAll: boolean // by default true
+}
 
 
 ## EVENTS
 
-@success-dropped-files - 
-returns files that haven`t passed the options check 
+@click-node - 
+returns clicked node 
 
-@error-dropped-files -
-returns files that have passed the options check
+```
+{
+    name:'',
+    children: [],
+    mate: [],
+}
+```
+
+## SLOTS 
+
+default slot - for display nested block
 
 ## EXAMPLE 
 
 <template>
-    <drag-drop-zone v-slot="{ dropZoneActive }">
-          <div v-if="dropZoneActive">
-               drop them
-          </div>
-          <div v-else>
-               drag
-          </div>
-    </drag-drop-zone>
+    <tree-view-blocks :json="data" v-slot="{ data }">
+        <div>
+            {{ data.name }}
+        </div>
+    </tree-view-blocks>
 </template>
 
 ### Customize configuration

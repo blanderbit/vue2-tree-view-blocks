@@ -1,6 +1,6 @@
 {
-  "name": "@blanderbit/vue2-drag-drop-zone",
-  "version": "0.1.1",
+  "name": "@blanderbit/vue2-tree-view-blocks",
+  "version": "0.0.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,25 +10,26 @@
   "dependencies": {
     "@vue/cli-plugin-typescript": "^5.0.4",
     "core-js": "^3.8.3",
+    "lodash.clonedeep": "^4.5.0",
     "typescript": "^4.6.3",
     "vue": "^2.6.14"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blanderbit/vue2-drag-drop-zone.git"
+    "url": "git+https://github.com/blanderbit/vue2-tree-view-blocks.git"
   },
   "keywords": [
     "vue",
-    "vue-drag-drop-zone",
-    "drag-and-drop",
-    "drag and drop",
-    "drop zone"
+    "vue2-tree-view-blocks",
+    "tree-view-blocks",
+    "tree-view",
+    "tree-view-list"
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/blanderbit/vue2-drag-drop-zone/issues"
+    "url": "https://github.com/blanderbit/vue2-tree-view-blocks/issues"
   },
-  "homepage": "https://github.com/blanderbit/vue2-drag-drop-zone#readme",
+  "homepage": "https://github.com/blanderbit/vue2-tree-view-blocks#readme",
   "main": "dist/vue2-drag-drop-zone.common.js",
   "files": [
     "dist"

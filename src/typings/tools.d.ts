@@ -1,3 +1,3 @@
-declare module 'vue2-drag-drop-zone' {
-    export const DragDropZone
+declare module 'vue2-tree-view-blocks' {
+    export const TreeViewBlocks
 }

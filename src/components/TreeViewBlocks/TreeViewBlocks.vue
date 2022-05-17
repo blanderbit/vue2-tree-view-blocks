@@ -140,6 +140,7 @@ function getTemplateByCoordinates(
   return !mate ? nestedPath(...arguments) : matePath(...arguments)
 }
 export default {
+  name: 'TreeViewBlocks',
   components: {
     TreeViewItem
   },
@@ -153,10 +154,6 @@ export default {
       default: () => ({
         initialExpandAll: true
       })
-    },
-    moveTo: {
-      type: Object,
-      default: () => {}
     }
   },
   data() {

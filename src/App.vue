@@ -1,34 +1,44 @@
 <template>
-  <div id="app">
-    <drag-drop-zone v-slot="{ dropZoneActive }">
-      <div v-if="dropZoneActive">
-        <div>drop them</div>
-      </div>
-      <div v-else>
-        <div class="mb-6">drag</div>
-      </div>
-    </drag-drop-zone>
-  </div>
+    <div id="app">
+        <tree-view-blocks :json="data" v-slot="{ data }">
+            <div >
+                {{ data.name }}
+            </div>
+        </tree-view-blocks>
+        <tree-view-blocks :json="data" v-slot="{ data }">
+            <div style="width: 250px;height: 200px;border: 3px solid red;">
+                {{ data.name }}
+            </div>
+        </tree-view-blocks>
+        <tree-view-blocks :json="data"/>
+    </div>
 </template>
 
 <script>
-import DragDropZone from './components/DragDropZone/DragDropZone.vue'
+    import TreeViewBlocks from './components/TreeViewBlocks/TreeViewBlocks.vue'
+    import {data} from "./const";
 
-export default {
-  name: 'App',
-  components: {
-      DragDropZone
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            TreeViewBlocks
+        },
+        data() {
+            return {
+                data
+            }
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        height: 100vh;
+        width: 100vw;
+    }
 </style>

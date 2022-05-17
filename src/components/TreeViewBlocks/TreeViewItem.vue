@@ -22,13 +22,12 @@
             </slot>
           </div>
 
-          <template v-if="treeData.mate" class="childLevel">
+          <template v-if="treeData.mate">
             <TreeViewItem
               v-for="(child, index) in treeData.mate"
               :key="index + 'childLevel'"
               :mate="true"
               :json="child"
-              :initial-extend="initialExtend"
               @coords-data="$emit('coords-data', $event)"
               @click-node="$emit('click-node', $event)"
               v-slot="{ data }"
@@ -54,7 +53,6 @@
       >
         <TreeViewItem
           :json="children"
-          :initial-extend="initialExtend"
           @coords-data="$emit('coords-data', $event)"
           @click-node="$emit('click-node', $event)"
           v-slot="{ data }"
@@ -94,7 +92,22 @@ function adjustLine(from, to, mate, _id) {
 }
 export default {
   name: 'TreeViewItem',
-  props: ['json', 'expandable', 'mate', 'initialExtend'],
+  props: {
+      json: {
+          type: Object,
+          required: true
+      },
+      expandable: {
+          type: Boolean,
+          required: false,
+          default: false
+      },
+      mate: {
+          type: Boolean,
+          required: false,
+          default: false
+      },
+  },
   data() {
     return {
       treeData: {},
